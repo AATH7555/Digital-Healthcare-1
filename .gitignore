@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependencies
 node_modules/
 npm-debug.log
@@ -42,3 +43,8 @@ coverage/
 # Temporary
 tmp/
 temp/
+=======
+node_modules/
+.env
+logs/
+>>>>>>> 49e5cea132576c11fc2b308f67228cefe176a461
