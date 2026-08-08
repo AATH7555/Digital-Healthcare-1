@@ -1,0 +1,246 @@
+.doctor-detail-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.top-back-button {
+  background: white;
+  border: 2px solid #667eea;
+  color: #667eea;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-back-button:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(-5px);
+}
+
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.detail-container h1 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 15px;
+}
+
+.detail-content {
+  animation: slideIn 0.3s ease;
+}
+
+/* Full width for single content (medications, vaccinations, etc) */
+.detail-content.full-width {
+  width: 100%;
+}
+
+.appointments-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Full width for appointments */
+.appointments-page-layout.full-width {
+  grid-template-columns: 1fr;
+}
+
+.appointments-page-layout .left-section {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+}
+
+.appointments-page-layout .right-section {
+  background: white;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-detail-page {
+    padding: 10px;
+  }
+
+  .detail-container {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .detail-container h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .top-back-button {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  /* Make appointments layout single-column on small screens */
+  .appointments-page-layout {
+    display: block;
+    gap: 0;
+  }
+
+  .appointments-page-layout .left-section {
+    display: none;
+  }
+
+  .appointments-page-layout .right-section {
+    width: 100%;
+    background: transparent;
+    padding: 0;
+  }
+
+  .detail-content {
+    overflow-y: visible !important;
+  }
+}
+
+/* Tablet Landscape and iPad */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .doctor-detail-page {
+    padding: 15px;
+  }
+
+  .detail-container {
+    padding: 25px;
+    max-width: 100%;
+  }
+
+  .detail-container h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .appointments-page-layout {
+    gap: 20px;
+  }
+
+  .appointments-page-layout .left-section {
+    padding: 15px;
+  }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .doctor-detail-page {
+    padding: 8px;
+  }
+
+  .detail-container {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .detail-container h1 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #667eea;
+  }
+
+  .top-back-button {
+    padding: 8px 12px;
+    font-size: 11px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .appointments-page-layout {
+    display: block;
+    gap: 0;
+  }
+
+  .appointments-page-layout .left-section {
+    display: none;
+  }
+
+  .appointments-page-layout .right-section {
+    width: 100%;
+    padding: 0;
+  }
+
+  .detail-content {
+    overflow-y: visible !important;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1400px) {
+  .doctor-detail-page {
+    padding: 25px;
+  }
+
+  .detail-container {
+    max-width: 1400px;
+    padding: 40px;
+  }
+
+  .detail-container h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .appointments-page-layout {
+    gap: 40px;
+  }
+
+  .appointments-page-layout .left-section {
+    padding: 25px;
+  }
+}
+
+/* Medium screens (1024px to 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .detail-container {
+    padding: 28px;
+  }
+
+  .detail-container h1 {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+
+  .appointments-page-layout {
+    gap: 25px;
+  }
+}

@@ -1,0 +1,565 @@
+.patient-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand-icon {
+  font-size: 28px;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.help-btn, .logout-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.help-btn:hover, .logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+}
+
+.dashboard-layout {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 280px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.patient-info {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.patient-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto 15px;
+}
+
+.patient-info h4 {
+  margin: 10px 0 5px 0;
+  color: #333;
+}
+
+.patient-info p {
+  color: #999;
+  font-size: 12px;
+  margin: 0;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  background: none;
+  border: none;
+  padding: 12px 15px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #555;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  background: #f5f5f5;
+  color: #667eea;
+}
+
+.menu-item.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  color: #667eea;
+  border-left: 4px solid #667eea;
+  padding-left: 11px;
+}
+
+.main-content {
+  flex: 1;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+.home-content {
+  animation: slideUp 0.3s ease;
+}
+
+.welcome-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.welcome-header h1 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 32px;
+}
+
+.welcome-header h2 {
+  color: #999;
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.health-id {
+  color: #667eea;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.stat-icon {
+  font-size: 36px;
+  color: #667eea;
+}
+
+.stat-info h4 {
+  margin: 0;
+  color: #333;
+  font-size: 28px;
+}
+
+.stat-info p {
+  margin: 5px 0 0 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.home-info {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.home-info h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.info-item strong {
+  color: #667eea;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.module-content {
+  animation: fadeIn 0.3s ease;
+}
+
+.module-content h3 {
+  color: #333;
+  margin: 0 0 30px 0;
+  font-size: 24px;
+}
+
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  background: #f9f9f9;
+  border-radius: 15px;
+}
+
+.qr-code-container canvas {
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.qr-code-container p {
+  color: #999;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .sidebar-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  .menu-item {
+    min-width: 0;
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-content {
+    padding: 12px 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar-brand {
+    font-size: 16px;
+    min-width: 100%;
+  }
+
+  .navbar-actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .help-btn, .logout-btn {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .dashboard-layout {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .sidebar {
+    padding: 20px;
+  }
+
+  .sidebar-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+
+  .menu-item {
+    min-width: 0;
+    width: auto;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .welcome-header {
+    margin-bottom: 25px;
+  }
+
+  .welcome-header h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .welcome-header h2 {
+    font-size: 16px;
+  }
+
+  .quick-stats {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-code-container {
+    padding: 20px;
+  }
+
+  .qr-code-container canvas {
+    max-width: 100%;
+    height: auto;
+    border-width: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-content {
+    padding: 10px 12px;
+  }
+
+  .navbar-brand {
+    font-size: 14px;
+  }
+
+  .brand-icon {
+    font-size: 20px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .help-btn, .logout-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .dashboard-layout {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .sidebar {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .patient-info {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .patient-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .patient-info h4 {
+    font-size: 14px;
+  }
+
+  .patient-info p {
+    font-size: 11px;
+  }
+
+  .sidebar-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+
+  .menu-item {
+    min-width: 0;
+    width: auto;
+    padding: 8px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .menu-item svg {
+    font-size: 16px;
+  }
+
+  .main-content {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .welcome-header {
+    margin-bottom: 20px;
+  }
+
+  .welcome-header h1 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .welcome-header h2 {
+    font-size: 14px;
+  }
+
+  .health-id {
+    font-size: 16px;
+  }
+
+  .quick-stats {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    padding: 15px;
+    gap: 12px;
+    border-radius: 10px;
+  }
+
+  .stat-icon {
+    font-size: 28px;
+  }
+
+  .stat-info h4 {
+    font-size: 22px;
+  }
+
+  .stat-info p {
+    font-size: 12px;
+  }
+
+  .home-info {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .home-info h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .info-item {
+    padding: 12px;
+    border-radius: 6px;
+    border-left-width: 2px;
+  }
+
+  .info-item strong {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .module-content h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .qr-code-container {
+    padding: 15px;
+  }
+
+  .qr-code-container canvas {
+    border-width: 3px;
+  }
+
+  .qr-code-container p {
+    font-size: 12px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

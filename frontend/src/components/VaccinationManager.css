@@ -1,0 +1,112 @@
+.vaccination-manager {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 25px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin: 20px 0;
+}
+
+.vaccination-manager h3 {
+  font-size: 20px;
+  margin: 0 0 20px 0;
+}
+
+.vac-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vac-section {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.vac-section h4 {
+  margin-top: 0;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.vac-entry {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 10px;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.vac-entry input {
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  background: white;
+  color: #333;
+}
+
+.btn-remove {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-remove:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.btn-add-more {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s;
+}
+
+.btn-add-more:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.btn-submit {
+  background: white;
+  color: #f5576c;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success-msg {
+  background: #4caf50;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}

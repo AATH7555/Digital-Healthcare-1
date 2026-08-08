@@ -1,0 +1,501 @@
+.vaccinations-list {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 25px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin: 20px 0;
+}
+
+.list-header {
+  margin-bottom: 25px;
+}
+
+.list-header h3 {
+  font-size: 22px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.error-msg {
+  background: #f44336;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px;
+  font-size: 16px;
+  color: white;
+}
+
+.vaccinations-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.vac-section {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.vac-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+.vac-section h4 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vac-count {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vaccinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.vaccination-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 4px solid;
+  color: #333;
+}
+
+.vaccination-card.completed {
+  border-left-color: #4caf50;
+}
+
+.vaccination-card.future {
+  border-left-color: #2196f3;
+}
+
+.vaccination-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.vac-card-icon {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.vac-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.vac-card-header h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  flex: 1;
+}
+
+.vac-status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.vac-status-badge.completed {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #4caf50;
+}
+
+.vac-status-badge.future {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #2196f3;
+}
+
+.vac-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.vac-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding: 6px 0;
+}
+
+.vac-label {
+  font-weight: 600;
+  color: #666;
+  min-width: 80px;
+}
+
+.vac-value {
+  color: #333;
+  font-weight: 500;
+  text-align: right;
+  flex: 1;
+}
+
+.vac-empty {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+  background: rgba(0,0,0,0.02);
+  border-radius: 6px;
+}
+
+.vac-header {
+  font-size: 16px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.vac-status {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.vaccination-card.completed .vac-status {
+  background: rgba(76, 175, 80, 0.3);
+}
+
+.vaccination-card.future .vac-status {
+  background: rgba(33, 150, 243, 0.3);
+}
+
+.vac-card-date {
+  font-size: 14px;
+  background: rgba(255,255,255,0.08);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.vac-card-date strong {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+@media (max-width: 1024px) {
+  .vaccinations-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .vaccinations-list {
+    padding: 22px;
+  }
+
+  .list-header h3 {
+    font-size: 20px;
+  }
+}
+
+/* Tablet Landscape */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .vaccinations-list {
+    padding: 22px;
+    margin: 18px 0;
+  }
+
+  .vac-section {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .vaccinations-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  .vaccination-card {
+    padding: 16px;
+  }
+
+  .vac-card-header h5 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vaccinations-list {
+    padding: 20px;
+    margin: 15px 0;
+  }
+
+  .list-header h3 {
+    font-size: 18px;
+    gap: 8px;
+  }
+
+  .vac-section {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .vac-section-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .vac-section h4 {
+    font-size: 16px;
+    gap: 6px;
+  }
+
+  .vac-count {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+
+  .vaccinations-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+  }
+
+  .vaccination-card {
+    padding: 15px;
+    gap: 10px;
+    border-left-width: 3px;
+  }
+
+  .vac-card-icon {
+    font-size: 28px;
+  }
+
+  .vac-card-header h5 {
+    font-size: 16px;
+  }
+
+  .vac-status-badge {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .vac-detail-row {
+    font-size: 13px;
+  }
+
+  .vac-card-date {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .vaccinations-list {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+
+  .list-header {
+    margin-bottom: 15px;
+  }
+
+  .list-header h3 {
+    font-size: 16px;
+    gap: 6px;
+  }
+
+  .vac-section {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+
+  .vac-section-header {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .vac-section h4 {
+    font-size: 14px;
+  }
+
+  .vac-count {
+    font-size: 11px;
+    padding: 2px 8px;
+    align-self: flex-start;
+  }
+
+  .vaccinations-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .vaccination-card {
+    padding: 12px;
+    gap: 8px;
+    border-left-width: 3px;
+  }
+
+  .vac-card-icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .vac-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .vac-card-header h5 {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .vac-status-badge {
+    padding: 3px 8px;
+    font-size: 11px;
+    align-self: flex-start;
+  }
+
+  .vac-card-body {
+    gap: 8px;
+    padding-top: 6px;
+  }
+
+  .vac-detail-row {
+    font-size: 12px;
+    padding: 4px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .vac-label {
+    font-size: 12px;
+    min-width: auto;
+  }
+
+  .vac-value {
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .vac-card-date {
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 4px;
+  }
+
+  .vac-card-date strong {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .vac-empty {
+    padding: 15px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  .no-data {
+    padding: 25px 15px;
+    font-size: 14px;
+  }
+
+  .error-msg {
+    font-size: 12px;
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .loading {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1400px) {
+  .vaccinations-list {
+    padding: 30px;
+    margin: 25px 0;
+  }
+
+  .list-header h3 {
+    font-size: 24px;
+  }
+
+  .vac-section {
+    padding: 22px;
+  }
+
+  .vaccinations-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+  }
+
+  .vaccination-card {
+    padding: 22px;
+    gap: 14px;
+  }
+
+  .vac-card-header h5 {
+    font-size: 20px;
+  }
+
+  .vac-detail-row {
+    font-size: 15px;
+  }
+}
